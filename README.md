@@ -59,9 +59,10 @@
 # Login Credentials
 | Email                  | Password      | Role           |
 | -------------          |:-------------:|:-------------: |
-| admin@gmail.com     | A1d2m3i4n5@A     | Admin          |
-| test1@gmail.com | Test1@     |  Buyer        |
-| test1@gmail.com      | Test2@     | Seller          |
+| test1@gmail.com | Test1@     |  User        |
+| admin@gmail.com     | Admin1@     | Admin          |
+
+
 
 
 
@@ -86,9 +87,9 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-#### hidden field with metadata 👇
+<!-- Hidden Text -->
 
-<div class="meta_for_parser tablespecs" style="visibility:hidden">{"dataname":"environment","colvar":"varname","colval":"value"}
+<div style="visibility:hidden">{"dataname":"environment","colvar":"varname","colval":"value"}
 
 
 ### firebase(client site hosting): https://bistro-boss-restaurant-7fc61.firebaseapp.com/
@@ -104,4 +105,4 @@ set all environment variables
 
 </div>
 
-#### hidden field with metadata 👆
+<!-- Hidden Text -->
