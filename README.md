@@ -87,12 +87,8 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-<!-- Hidden Text -->
 
-<div style="visibility:hidden">{"dataname":"environment","colvar":"varname","colval":"value"}
-
-
-### firebase(client site hosting): https://bistro-boss-restaurant-7fc61.firebaseapp.com/
+<!-- ### firebase(client site hosting): https://bistro-boss-restaurant-7fc61.firebaseapp.com/
 
 set all environment variables
 ### vercel(server site hosting): https://bistro-boss-restaurant-server-eight.vercel.app
@@ -101,8 +97,4 @@ set all environment variables
 
 <code>NODE_VERSION: v18.18.0 </code>//must be check the version in terminal: <code>node -v</code>
 
-### render(server site hosting): https://bistro-boss-restaurant.onrender.com/
-
-</div>
-
-<!-- Hidden Text -->
+### render(server site hosting): https://bistro-boss-restaurant.onrender.com/ -->
