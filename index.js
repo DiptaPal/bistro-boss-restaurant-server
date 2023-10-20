@@ -285,6 +285,7 @@ async function run() {
         foodId: item.foodId,
         email: item.email,
       });
+      
       if (existingItem) {
         existingItem.quantity = existingItem.quantity + 1;
 
