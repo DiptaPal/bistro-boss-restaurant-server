@@ -285,7 +285,7 @@ async function run() {
         foodId: item.foodId,
         email: item.email,
       });
-      
+
       if (existingItem) {
         existingItem.quantity = existingItem.quantity + 1;
 
@@ -484,12 +484,12 @@ async function run() {
               {
                 $match: {
                   $expr: {
-                    $eq: ["$_id", { $toObjectId: "$$foodId" }] // Compare as ObjectId
-                  }
-                }
-              }
+                    $eq: ["$_id", { $toObjectId: "$$foodId" }], // Compare as ObjectId
+                  },
+                },
+              },
             ],
-            as: "menuDetails"
+            as: "menuDetails",
           },
         },
         {
@@ -513,14 +513,12 @@ async function run() {
             itemCount: 1,
             totalPrice: { $round: ["$totalPrice", 2] },
           },
-        }
+        },
       ];
-      
 
       const result = await paymentCollection.aggregate(pipeline).toArray();
       res.send(result);
     });
-
 
     /**
      * ------------------------------------
@@ -534,7 +532,6 @@ async function run() {
      * 6. now get the quantity by using length and quantity: pizzas.length * pizzas.quantity
      * 7. for each category use reduce to get the total amount spent on that category
      */
-
 
     //user stats related apis
 
@@ -558,17 +555,33 @@ async function run() {
       const result = await menuCollection.aggregate(pipeline).toArray();
 
       //based on user reviews, payments, orders, bookings count
-      const totalReviews = (await reviewCollection.find({email: email}).toArray()).length;
-      const totalPayments = (await paymentCollection.find({email: email}).toArray()).length;
-      const totalOrders = (await paymentCollection.find({email: email, categoryType: "Food Order"}).toArray()).length;
-      const totalBookings = (await reservationCollection.find({email: email}).toArray()).length;
+      const totalReviews = (
+        await reviewCollection.find({ email: email }).toArray()
+      ).length;
+      const totalPayments = (
+        await paymentCollection.find({ email: email }).toArray()
+      ).length;
+      const totalOrders = (
+        await paymentCollection
+          .find({ email: email, categoryType: "Food Order" })
+          .toArray()
+      ).length;
+      const totalBookings = (
+        await reservationCollection.find({ email: email }).toArray()
+      ).length;
 
       // console.log(totalReviews, totalPayments, totalBookings, totalOrders);
 
-      res.send({ products, result, totalReviews, totalPayments, totalBookings, totalOrders });
+      res.send({
+        products,
+        result,
+        totalReviews,
+        totalPayments,
+        totalBookings,
+        totalOrders,
+      });
     });
-    
-    
+
     // Send a ping to confirm a successful connection
     // await client.db("admin").command({ ping: 1 });
     console.log(
