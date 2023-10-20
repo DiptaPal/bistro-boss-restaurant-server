@@ -283,6 +283,7 @@ async function run() {
       const item = req.body;
       const existingItem = await cartCollection.findOne({
         foodId: item.foodId,
+        email: item.email,
       });
       if (existingItem) {
         existingItem.quantity = existingItem.quantity + 1;
