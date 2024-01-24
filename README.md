@@ -25,7 +25,7 @@
 
 ### <u>Which i used:</u>
 * React
-* Tialwind
+* Tailwind
 * DaisyUI
 * React Router Dom
 * React Hook Form
